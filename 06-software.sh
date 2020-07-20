@@ -60,5 +60,4 @@ PKGS=(
 
   # other
   thunar                # lightweight file manager
-  thunar-volman         # removable devices in Thunar
 )
