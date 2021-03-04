@@ -5,7 +5,7 @@ pacman -S --noconfirm rust > /dev/null 2>&1
 
 git clone https://git.sr.ht/~kennylevinsen/greetd /usr/local/src/greetd > /dev/null 2>&1
 cd /usr/local/src/greetd/
-git checkout 0.6.1 > /dev/null 2>&1
+git checkout 0.7.0 > /dev/null 2>&1
 
 cargo build --release
 cp target/release/greetd /usr/local/bin/
@@ -18,7 +18,7 @@ chown -R greeter:greeter /etc/greetd/
 
 git clone https://git.sr.ht/~kennylevinsen/gtkgreet /usr/local/src/gtkgreet > /dev/null 2>&1
 cd /usr/local/src/gtkgreet/
-git checkout 0.6 > /dev/null 2>&1
+git checkout 0.7 > /dev/null 2>&1
 
 meson -Dlayershell=true build
 ninja -C build
