@@ -1,11 +1,13 @@
 #!/usr/bin/env sh
 
 PKGS=(
+  pipewire              # sound/video server
+  pipewire-pulse        # replaces pulseaudio{-bluetooth}
   alsa-utils            # amixer and alsamixer
-  pulseaudio            # sound server
-  pulseaudio-alsa       # ALSA support
-  pulseaudio-bluetooth  # bluetooth support
   pavucontrol           # volume control GUI
-  pipewire              # future sound server
-  pipewire-pulse        # PulseAudio support
+
+  # screen sharing
+  xdg-desktop-portal
+  xdg-desktop-portal-wlr
+  pipewire-media-session
 )
