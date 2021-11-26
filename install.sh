@@ -15,7 +15,7 @@ E_USERNAME_NOT_EXIST=72
 
 install_pkgs() {
   if [ -e "$1" ]; then
-    echo ":: Installing ${1}..."
+    echo -e "\e[1;34m::\e[1;m Installing ${1}..."
     source "${PKG_DIR}${1}"
 
     n_failed=0
@@ -23,10 +23,10 @@ install_pkgs() {
     for PKG in "${PKGS[@]}"; do
       pacman -S --asexplicit --noconfirm $PKG > /dev/null 2>&1
       if [ "$?" -eq 0 ]; then
-        echo " ${PKG} [OK]"
+        echo -e " [   \e[1;32mOK\e[1;m   ] ${PKG}"
         n_ok=$((n_ok+1))
       else
-        echo " ${PKG} [Failed]"
+        echo -e " [ \e[1;31mFAILED\e[1;m ] ${PKG}"
         n_failed=$((n_failed+1))
       fi
     done
@@ -38,7 +38,7 @@ install_pkgs() {
 
 install_script() {
   if [ -e "$1" ]; then
-    echo ":: Installing ${1}..."
+    echo -e "\e[1;34m::\e[1;m Installing ${1}..."
     source "${SCRIPT_DIR}${1}"
   else
     exit $E_SCRIPT_FILE_NOT_EXIST
@@ -74,7 +74,7 @@ configure "01-sway-cfg.sh"
 install_pkgs "02-networking.sh"
 configure "02-networking-cfg.sh"
 
-install_pkgs "03-audio.sh"
+install_pkgs "03-multimedia.sh"
 
 install_pkgs "04-security.sh"
 configure "04-security-cfg.sh"

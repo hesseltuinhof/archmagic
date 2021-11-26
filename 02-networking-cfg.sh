@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo ":: Configuring networking..."
+echo -e "\e[1;34m::\e[1;m Configuring networking..."
 
 echo " Enabling NetworkManager daemon."
 systemctl enable --now NetworkManager.service > /dev/null 2>&1
@@ -10,7 +10,7 @@ sed -i "s/#FallbackNTP=/NTP=/g" /etc/systemd/timesyncd.conf
 sed -i "s/#NTP=/#FallbackNTP=/g" /etc/systemd/timesyncd.conf
 systemctl enable --now systemd-timesyncd.service > /dev/null 2>&1
 
-echo ":: Configuring bluetooth..."
+echo -e "\e[1;34m::\e[1;m Configuring bluetooth..."
 
 echo " Adding user to lp group."
 usermod -a -G lp $USERNAME

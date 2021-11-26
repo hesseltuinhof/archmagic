@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo ":: Configuring software..."
+echo -e "\e[1;34m::\e[1;m Configuring software..."
 
 echo " Updating pkgfile database."
 pkgfile --update > /dev/null 2>&1

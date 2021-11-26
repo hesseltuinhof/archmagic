@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo ":: Configuring security..."
+echo -e "\e[1;34m::\e[1;m Configuring security..."
 
 echo " Enabling PAM support for Gnome keyring."
 sed -i "/^auth.*include.*system-local-login$/a auth       optional     pam_gnome_keyring.so" /etc/pam.d/login
