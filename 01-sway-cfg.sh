@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-echo ":: Configuring sway..."
+echo -e "\e[1;34m::\e[1;m Configuring sway..."
 
 HOME_DIR="/home/${USERNAME}"
 
@@ -12,7 +12,7 @@ chown $USERNAME:$USERNAME ${HOME_DIR}/.config/sway/config
 echo " Creating XDG user directories."
 sudo -u $USERNAME mkdir -p ${HOME_DIR}/{documents,downloads,music,pictures,videos}
 
-echo ":: Configuring fish..."
+echo -e "\e[1;34m::\e[1;m Configuring fish..."
 
 echo " Setting fish as default shell."
 chsh -s /usr/bin/fish $USERNAME > /dev/null 2>&1
