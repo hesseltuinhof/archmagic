@@ -5,7 +5,7 @@ pacman -S --noconfirm rust > /dev/null 2>&1
 
 git clone https://git.sr.ht/~kennylevinsen/greetd /usr/local/src/greetd > /dev/null 2>&1
 cd /usr/local/src/greetd/
-git checkout 0.7.0 > /dev/null 2>&1
+git checkout 0.8.0 > /dev/null 2>&1
 
 cargo build --release
 cp target/release/greetd /usr/local/bin/
